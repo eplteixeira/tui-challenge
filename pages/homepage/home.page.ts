@@ -19,6 +19,9 @@ export class HomePage {
     await this.buttonMenu.waitFor({ state: 'attached', timeout: 2000 }).catch(() => false);
   }
 
+  /**
+   * Open the menu
+   */
   async openMenu() {
     await this.buttonMenu.click();
 
@@ -26,12 +29,18 @@ export class HomePage {
     await this.buttonCloseMenu.waitFor({ state: 'visible' });
   }
 
+  /**
+   * Close the menu
+   */
   async closeMenu() {
     await this.buttonCloseMenu.click();
 
     await this.menuPanel.waitFor({ state: 'hidden' });
   }
 
+  /**
+   * Click in the "about" option in the menu
+   */
   async about() {
     await this.openMenu();
 
@@ -39,12 +48,20 @@ export class HomePage {
     await this.page.waitForLoadState('domcontentloaded');
   }
 
+  /**
+   * Click in the "logout" option in the menu
+   */
   async logout() {
     await this.openMenu();
 
     await this.buttonLogout.click();
   }
 
+  /**
+   * Get the number of items in the cart.
+   * 
+   * @returns Number of items added in the cart
+   */
   async cartNumProducts(): Promise<number> {
     await this.buttonBasketCart.waitFor({ state: 'attached' });
 
@@ -57,18 +74,27 @@ export class HomePage {
     return 0;
   }
 
+  /**
+   * Click in the "All Items" option in the menu
+   */
   async clickAllItems() {
     await this.openMenu();
 
     await this.buttonAllItems.click();
   }
 
+  /**
+   * Click in the "Reset App State" option in the menu
+   */
   async clickReset() {
     await this.openMenu();
 
     await this.buttonResetAppState.click();
   }
 
+  /**
+   * Open the Basket Cart
+   */
   async clickBasketCart() {
     await this.buttonBasketCart.click();
 

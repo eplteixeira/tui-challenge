@@ -40,7 +40,6 @@ export class ProductPage {
     await this.page.waitForLoadState();
   }
 
-
   /**
    * Add product to the cart
    */

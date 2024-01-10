@@ -9,6 +9,15 @@ export class CheckoutPage {
   readonly buttonBackHome = this.page.getByTestId('back-to-products');
   readonly labelComplete = this.page.locator('div h2');
 
+  /**
+   * At checkout we need to fill all related user information to ship the product.
+   * This method will fill all required information and then continue with the 
+   * checkout.
+   * 
+   * @param first user first name
+   * @param last user last name
+   * @param code user postal code
+   */
   async fillUserInformationAndContinue(first: string, last: string, code: string) {
     await this.inputFirstName.waitFor().catch(() => false);
 
@@ -21,6 +30,9 @@ export class CheckoutPage {
     await this.buttonFinish.waitFor({ timeout: 2000 }).catch(() => false);
   }
 
+  /**
+   * Guarantee we click in the button BackHome when we finish checkout.
+   */
   async clickBackHome() {
     await this.buttonBackHome.waitFor({ timeout: 2000 }).catch(() => false);
     await this.buttonBackHome.click();

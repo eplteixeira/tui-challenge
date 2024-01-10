@@ -37,6 +37,10 @@ export class LoginPage {
     await this.buttonLogin.click();
   }
 
+  /**
+   * Perform the logout operation, by 
+   * open the menu and click logout
+   */
   async logout() {
     const homePage = new HomePage(this.page);
     await homePage.logout();
