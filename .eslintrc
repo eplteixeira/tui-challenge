@@ -1,0 +1,35 @@
+{
+  "root": false,
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:playwright/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": ["tsconfig.json"]    
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "@stylistic/ts"
+  ],
+  "rules": {
+    "@stylistic/ts/quotes": [
+      "error",
+      "single"
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "@typescript-eslint/no-floating-promises": "error",
+        "@typescript-eslint/no-duplicate-enum-values": "off"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "lib": ["ES2022"],
+    "useDefineForClassFields": false,
+    "typeRoots": ["./node_modules/@types"]    
+  }
+}

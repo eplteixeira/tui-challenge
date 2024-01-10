@@ -1,0 +1,27 @@
+{
+  "name": "web-ui",
+  "version": "0.0.0",
+  "scripts": {
+    "ui": "playwright test --ui",
+    "test": "playwright test",
+    "test:serial": "playwright test --workers=1",
+    "test:headed": "playwright test --headed",
+    "test:firefox": "playwright test --project=firefox",
+    "test:chromium": "playwright test --project=chromium",
+    "test:userjourney": "playwright test --grep @userjourney",
+    "lint": "eslint . --ext .ts"
+  },
+  "author": "Emanuel Teixeira",
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "@stylistic/eslint-plugin-ts": "^1.5.3",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-playwright": "^0.21.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  }
+}
